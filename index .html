@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Field notes: outdoors in Massachusetts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&family=Zilla+Slab:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDF0E8; --card:#F7F9F4; --ink:#1E2A21; --muted:#56675A;
+  --hemlock:#2E4A37; --moss:#8FA283; --blaze:#F0621A; --line:#C8D1C1;
+  --archery:#6E8B5E; --gun:#F0621A; --primitive:#8A5A3B; --game:#4E6B57; --water:#3F7A9C;
+  --serif:"Zilla Slab", Rockwell, "Roboto Slab", Georgia, serif;
+  --sans:"Public Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#141D17; --card:#1B261E; --ink:#E4ECE1; --muted:#9DAF9F;
+    --hemlock:#A8C8B0; --moss:#5F7555; --blaze:#FF7D35; --line:#2C3B2F;
+    --archery:#7FA06D; --primitive:#B07A55; --game:#7FA58A; --water:#6FA9CB;
+  }
+}
+*{box-sizing:border-box}
+html{background:var(--paper)}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 var(--sans)}
+a{color:var(--hemlock);text-underline-offset:3px}
+a:hover{color:var(--blaze)}
+:focus-visible{outline:3px solid var(--blaze);outline-offset:2px;border-radius:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.15;margin:0}
+h2{font-size:1.7rem;margin-bottom:6px}
+h3{font-size:1.2rem;font-weight:500;margin-bottom:10px}
+.lede{color:var(--muted);max-width:65ch;margin:0 0 20px}
+.small{font-size:.875rem}
+
+/* Hero: season band */
+header{padding:48px 0 24px;border-bottom:6px solid var(--blaze)}
+header h1{font-size:clamp(2.2rem,6vw,3.6rem);letter-spacing:-.01em}
+header p{max-width:60ch;margin:8px 0 0;color:var(--muted)}
+.band{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:18px 16px 12px;overflow-x:auto}
+.band-grid{position:relative;display:grid;grid-template-columns:190px 1fr;row-gap:8px;align-items:center;min-width:680px}
+.group{grid-column:1/-1;font-family:var(--serif);font-weight:700;font-size:1.05rem;margin-top:8px;padding-bottom:2px;border-bottom:1px solid var(--line)}
+.group:first-child{margin-top:0}
+.band-label{font-size:.88rem;font-weight:600;padding-right:8px}
+.band-label span{display:block;font-weight:400;font-size:.75rem;color:var(--muted)}
+.track{position:relative;height:22px;background:repeating-linear-gradient(90deg,transparent 0 calc(100%/12 - 1px),var(--line) calc(100%/12 - 1px) calc(100%/12))}
+.bar{position:absolute;top:3px;bottom:3px;border-radius:3px}
+.months{grid-column:2;display:grid;grid-template-columns:repeat(12,1fr);font-size:.75rem;color:var(--muted);padding-top:4px}
+.today{position:absolute;top:0;bottom:0;width:2px;background:var(--ink);pointer-events:none}
+.today span{position:absolute;top:-16px;left:4px;font-size:.72rem;font-weight:700;white-space:nowrap}
+.band-note{margin:12px 0 0;font-size:.85rem;color:var(--muted)}
+
+main{padding:48px 0 60px;display:grid;gap:56px}
+
+/* License steps */
+.paths{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 36px}
+@media (max-width:820px){.paths{grid-template-columns:1fr}}
+.path{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--hemlock);border-radius:6px;padding:20px 22px}
+.path.gun{border-top-color:var(--blaze)}
+.path.fish{border-top-color:var(--water)}
+.path p.intro{margin:0 0 12px;color:var(--muted);font-size:.92rem}
+.steps{margin:0;padding-left:1.4em}
+.steps li{margin-bottom:12px;padding-left:4px}
+.steps li::marker{font-family:var(--serif);font-weight:700;color:var(--blaze)}
+.steps strong{display:block}
+.steps .d{font-size:.92rem}
+.flag{margin-top:12px;padding:10px 12px;border-left:4px solid var(--blaze);background:var(--paper);font-size:.88rem}
+
+/* Fishing spots */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:.93rem}
+th,td{text-align:left;vertical-align:top;padding:10px 14px;border-bottom:1px solid var(--line)}
+th{font-family:var(--serif);font-weight:700;font-size:1rem;background:var(--paper)}
+tr:last-child td{border-bottom:0}
+td.mi{font-family:var(--serif);font-weight:700;white-space:nowrap}
+td.links a{display:block;white-space:nowrap}
+.tag{display:inline-block;font-size:.75rem;font-weight:600;padding:1px 8px;border-radius:999px;border:1px solid var(--water);color:var(--water);margin:2px 4px 0 0}
+
+/* Resources */
+.res{display:flex;gap:18px;align-items:flex-start}
+.res .col{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:18px}
+.res .card{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--moss);border-radius:6px;padding:14px 16px 10px}
+.res ul{list-style:none;margin:0;padding:0}
+.res li{padding:7px 0;font-size:.95rem;border-top:1px solid var(--line)}
+.res li:first-child{border-top:0;padding-top:2px}
+.res li a{font-weight:600}
+.res li span{display:block;font-size:.82rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.res h3{margin-bottom:8px}
+footer{padding:20px 0 40px;font-size:.8rem;color:var(--muted)}
+
+/* ===== Fall finish ===== */
+main.wrap{padding:52px 20px 64px}
+a{text-decoration-thickness:1px;text-decoration-color:color-mix(in srgb,currentColor 40%,transparent)}
+a:hover{text-decoration-color:currentColor}
+:root{
+  --paper:#F3EDE1; --card:#FBF7EF; --ink:#2A2118; --muted:#6E5E4E; --line:#DDD0BC;
+  --maple:#B7351F; --pumpkin:#E0701C; --gold:#D6A01E; --cranberry:#8C2741; --olive:#66772D; --bark:#6A4428;
+  --hemlock:#34503B; --moss:#8E9A5C; --blaze:#E0701C;
+  --archery:#66772D; --gun:#E0701C; --primitive:#6A4428; --game:#8C2741; --water:#3D7896;
+  --fall:linear-gradient(90deg,var(--cranberry),var(--maple) 25%,var(--pumpkin) 50%,var(--gold) 75%,var(--olive));
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .25 0 0 0 0 .15 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --leaf:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12%201.5c4.6%204.2%207%208.4%207%2012.3A7%207%200%200%201%2012.8%2021v1.5h-1.6V21A7%207%200%200%201%205%2013.8c0-3.9%202.4-8.1%207-12.3z'/%3E%3C/svg%3E");
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#1C1712; --card:#261F18; --ink:#F1E7D8; --muted:#BBA88F; --line:#3C3126;
+    --maple:#E0553A; --pumpkin:#F28A38; --gold:#E9B940; --cranberry:#C9506D; --olive:#9DB04E; --bark:#B07D52;
+    --hemlock:#E9B940; --moss:#7C8750; --blaze:#F28A38;
+    --archery:#9DB04E; --gun:#F28A38; --primitive:#B07D52; --game:#C9506D; --water:#6FA9CB;
+  }
+}
+html,body{background:var(--paper) var(--grain)}
+a{color:var(--ink);text-decoration-color:var(--pumpkin)!important;text-decoration-thickness:2px!important;text-underline-offset:4px}
+a:hover{color:var(--maple)}
+
+header{position:relative;overflow:hidden;border-bottom:0;padding-bottom:40px;
+  background:radial-gradient(120% 140% at 100% 0%,rgba(224,112,28,.22),transparent 55%),radial-gradient(90% 120% at 0% 100%,rgba(140,39,65,.14),transparent 60%),var(--grain)}
+header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:8px;background:var(--fall)}
+header h1{color:var(--cranberry);position:relative}
+header p{position:relative}
+.leaves{position:absolute;right:-20px;top:-10px;width:min(46vw,440px);height:100%;pointer-events:none;opacity:.9}
+@media (max-width:640px){.leaves{opacity:.35}}
+
+h2{display:flex;align-items:center;gap:10px}
+h2::before{content:"";width:22px;height:22px;flex:none;background:var(--c,var(--maple));-webkit-mask:var(--leaf) center/contain no-repeat;mask:var(--leaf) center/contain no-repeat;transform:rotate(-20deg)}
+main > section:nth-of-type(6n+1){--c:var(--maple)}
+main > section:nth-of-type(6n+2){--c:var(--pumpkin)}
+main > section:nth-of-type(6n+3){--c:var(--gold)}
+main > section:nth-of-type(6n+4){--c:var(--olive)}
+main > section:nth-of-type(6n+5){--c:var(--cranberry)}
+main > section:nth-of-type(6n+6){--c:var(--bark)}
+
+.band{background:var(--card);box-shadow:0 1px 0 var(--line),0 10px 24px -18px rgba(106,68,40,.45)}
+.group{color:var(--bark);border-bottom:2px solid transparent;border-image:var(--fall) 1}
+.bar{box-shadow:inset 0 -2px 0 rgba(0,0,0,.12)}
+
+.res .card{border-top:5px solid var(--c2,var(--maple));box-shadow:0 10px 22px -18px rgba(106,68,40,.5);background:linear-gradient(180deg,color-mix(in srgb,var(--c2,var(--maple)) 7%,var(--card)),var(--card) 90px)}
+.res .card[data-i="0"]{--c2:var(--maple)}
+.res .card[data-i="1"]{--c2:var(--pumpkin)}
+.res .card[data-i="2"]{--c2:var(--gold)}
+.res .card[data-i="3"]{--c2:var(--olive)}
+.res .card[data-i="4"]{--c2:var(--cranberry)}
+.res .card[data-i="5"]{--c2:var(--bark)}
+.res h3{border-bottom:0;padding-bottom:0;color:var(--c2)}
+
+.path{box-shadow:0 10px 22px -18px rgba(106,68,40,.5);border-top-width:5px;border-top-color:var(--maple);background:linear-gradient(180deg,color-mix(in srgb,var(--maple) 6%,var(--card)),var(--card) 110px)}
+.path.gun{border-top-color:var(--pumpkin);background:linear-gradient(180deg,color-mix(in srgb,var(--pumpkin) 7%,var(--card)),var(--card) 110px)}
+.path.fish{border-top-color:var(--water);background:linear-gradient(180deg,color-mix(in srgb,var(--water) 7%,var(--card)),var(--card) 110px)}
+.path:nth-child(4){border-top-color:var(--bark);background:linear-gradient(180deg,color-mix(in srgb,var(--bark) 7%,var(--card)),var(--card) 110px)}
+.steps li::marker{color:var(--pumpkin)}
+
+.flag{border-left:5px solid var(--gold);background:color-mix(in srgb,var(--gold) 12%,var(--card));border-radius:0 6px 6px 0}
+
+.tbl{box-shadow:0 10px 22px -18px rgba(106,68,40,.5)}
+th{background:linear-gradient(90deg,color-mix(in srgb,var(--pumpkin) 18%,var(--card)),color-mix(in srgb,var(--gold) 14%,var(--card)));color:var(--bark)}
+tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--gold) 5%,transparent)}
+td.mi{color:var(--pumpkin)}
+.tag{border:0;color:var(--card);background:var(--olive)}
+.tag.t-trout,.tag.t-bass,.tag.t-pike,.tag.t-lake{background:var(--water)}
+.tag.t-deer,.tag.t-archery{background:var(--maple)}
+.tag.t-turkey,.tag.t-pheasant,.tag.t-upland{background:var(--cranberry)}
+.tag.t-waterfowl,.tag.t-small{background:var(--bark)}
+.tag.t-refuge,.tag.t-lottery,.tag.t-seasonal,.tag.t-dcr{background:var(--gold);color:#2A2118}
+
+footer{border-top:8px solid transparent;border-image:var(--fall) 1;padding-top:18px}
+</style>
+</head>
+<body>
+
+<header>
+    <svg class="leaves" viewBox="0 0 440 260" aria-hidden="true">
+      <g>
+        <path transform="translate(300 18) rotate(25) scale(4.2)" fill="var(--maple)" d="M12 1.5c4.6 4.2 7 8.4 7 12.3A7 7 0 0 1 12.8 21v1.5h-1.6V21A7 7 0 0 1 5 13.8c0-3.9 2.4-8.1 7-12.3z"/>
+        <path transform="translate(380 90) rotate(-35) scale(3)" fill="var(--gold)" d="M12 1.5c4.6 4.2 7 8.4 7 12.3A7 7 0 0 1 12.8 21v1.5h-1.6V21A7 7 0 0 1 5 13.8c0-3.9 2.4-8.1 7-12.3z"/>
+        <path transform="translate(230 110) rotate(60) scale(2.4)" fill="var(--pumpkin)" d="M12 1.5c4.6 4.2 7 8.4 7 12.3A7 7 0 0 1 12.8 21v1.5h-1.6V21A7 7 0 0 1 5 13.8c0-3.9 2.4-8.1 7-12.3z"/>
+        <path transform="translate(340 170) rotate(-80) scale(2.2)" fill="var(--cranberry)" d="M12 1.5c4.6 4.2 7 8.4 7 12.3A7 7 0 0 1 12.8 21v1.5h-1.6V21A7 7 0 0 1 5 13.8c0-3.9 2.4-8.1 7-12.3z"/>
+        <path transform="translate(170 30) rotate(-15) scale(1.6)" fill="var(--olive)" d="M12 1.5c4.6 4.2 7 8.4 7 12.3A7 7 0 0 1 12.8 21v1.5h-1.6V21A7 7 0 0 1 5 13.8c0-3.9 2.4-8.1 7-12.3z"/>
+        <path transform="translate(410 200) rotate(40) scale(1.5)" fill="var(--pumpkin)" d="M12 1.5c4.6 4.2 7 8.4 7 12.3A7 7 0 0 1 12.8 21v1.5h-1.6V21A7 7 0 0 1 5 13.8c0-3.9 2.4-8.1 7-12.3z"/>
+      </g>
+    </svg>
+  <div class="wrap">
+    <h1>Field notes</h1>
+    <p>Learning to hunt, trap, fish, and get around outdoors in Massachusetts.</p>
+
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section aria-labelledby="t-res">
+    <h2 id="t-res">Where I find events</h2>
+    
+    <div class="res" id="res"></div>
+  </section>
+
+  <section aria-labelledby="t-seasons">
+    <h2 id="t-seasons">Seasons</h2>
+    <p class="lede">Massachusetts 2026 hunting and fishing seasons.</p>
+    <div class="band" aria-label="Massachusetts 2026 hunting and fishing seasons">
+      <div class="band-grid" id="band"></div>
+    </div>
+    <p class="band-note">2026 seasons, statewide zones. No hunting on Sundays in Massachusetts. Reservoir dates are set by DCR each year and can shift with ice.</p>
+  </section>
+
+  <section aria-labelledby="t-lic">
+    <h2 id="t-lic">Getting licensed in Massachusetts</h2>
+    <p class="lede">Step by step, from zero to legal. Fees and license sales are all on <a href="https://massfishhunt.mass.gov/">MassFishHunt</a>. Licenses run on the calendar year and expire Dec 31.</p>
+
+    <div class="paths">
+
+      <article class="path">
+        <h3>Hunting</h3>
+        <p class="intro">Covers bow and firearm hunting. Everyone new to hunting starts here.</p>
+        <ol class="steps">
+          <li><strong>Take the online hunter ed course</strong><span class="d">Work through MassWildlife's online Basic Hunter Education study material. It's free and self-paced, and you need it done before you can sign up for a field day.</span></li>
+          <li><strong>Register for and attend a field day</strong><span class="d">A free, in-person day with instructors covering safe firearm handling, ethics, and laws, ending in a written test. Seats fill fast, so watch the <a href="https://www.mass.gov/info-details/basic-hunter-education-courses">course list</a> and use waitlists.</span></li>
+          <li><strong>Get your certificate</strong><span class="d">Pass the test and you're certified for life. Keep a copy; you'll need it to buy your first license and for an FID.</span></li>
+          <li><strong>Buy a Hunting or Sporting license</strong><span class="d">Sporting covers hunting and freshwater fishing together. Resident licenses include 2 antlered deer tags good statewide.</span></li>
+          <li><strong>Add stamps and permits for what you'll hunt</strong><span class="d">Archery Stamp for the archery deer season. Primitive Firearms Stamp for the muzzleloader season. Waterfowl also needs a state waterfowl stamp, a federal duck stamp, and HIP registration. Antlerless deer permits are applied for in summer on MassFishHunt.</span></li>
+          <li><strong>In the field: tag, report, wear orange</strong><span class="d">Tag deer, turkey, and bear right away and report the harvest online. During shotgun and primitive seasons, wear 500 square inches of blaze orange on chest, back, and head.</span></li>
+        </ol>
+        <div class="flag">Bowhunting needs no extra course in Massachusetts: hunter ed, a license, and the Archery Stamp.</div>
+      </article>
+
+      <article class="path gun">
+        <h3>FID card (rifles and shotguns)</h3>
+        <p class="intro">A hunting license does not let you own or carry a gun. To possess a rifle or shotgun you also need a Firearms Identification Card.</p>
+        <ol class="steps">
+          <li><strong>Get a qualifying safety certificate</strong><span class="d">A Massachusetts Basic Hunter Education certificate counts for an FID. So does a state-approved Basic Firearms Safety course. Hunter ed from another state does not count here.</span></li>
+          <li><strong>Know the 2026 rules</strong><span class="d">Since April 2, 2026, safety courses must cover MA firearms law, storage, and suicide prevention, and the law calls for live fire. Live fire isn't enforced yet while regulations are finalized. Hunter ed is not accepted for a License to Carry, only an FID.</span></li>
+          <li><strong>Apply through your local police department</strong><span class="d">Contact your town's firearms licensing office for the application, fee, and an appointment. Expect fingerprinting, a background check, and possibly an interview or references.</span></li>
+          <li><strong>Wait for approval</strong><span class="d">Processing can take weeks to a few months depending on the town. Plan ahead of the season you want to hunt.</span></li>
+          <li><strong>Buy and store legally</strong><span class="d">Buy from a licensed dealer, register the transaction as required, and follow MA storage and transport laws (locked or unloaded and cased).</span></li>
+        </ol>
+        <div class="flag">Rules changed a lot in 2024 to 2026. Confirm current requirements with your police department and the <a href="https://www.mass.gov/info-details/hunting-with-a-firearm-in-massachusetts">MassWildlife firearms page</a>.</div>
+      </article>
+
+      <article class="path fish">
+        <h3>Fishing</h3>
+        <p class="intro">The easiest place to start: no course required.</p>
+        <ol class="steps">
+          <li><strong>Buy a freshwater fishing license</strong><span class="d">Required at age 15 and up (free for ages 15 to 17 and 70 and older). Included in a Sporting license. Carry it while fishing.</span></li>
+          <li><strong>Add a saltwater permit for the coast</strong><span class="d">Fishing in salt water needs a separate Massachusetts recreational saltwater permit, also on MassFishHunt.</span></li>
+          <li><strong>Learn the basic gear rules</strong><span class="d">Max 2 hooks in open water, 5 when ice fishing. Lead sinkers and jigs under 1 ounce are banned in fresh water. Some fish must be released immediately.</span></li>
+          <li><strong>Check limits and special waters</strong><span class="d">Most species are open all year, with daily limits and minimum lengths. Wachusett, Sudbury, and Quabbin reservoirs have their own seasons and shoreline rules.</span></li>
+          <li><strong>Find stocked water</strong><span class="d">MassWildlife stocks trout in spring and fall. Check the <a href="https://www.mass.gov/info-details/trout-stocking-report">daily stocking report</a> before you go.</span></li>
+        </ol>
+      </article>
+
+      <article class="path">
+        <h3>Trapping</h3>
+        <p class="intro">Separate course and license from hunting.</p>
+        <ol class="steps">
+          <li><strong>Take Trapper Education</strong><span class="d">Required for first-time trappers. MassWildlife runs a limited number of <a href="https://www.mass.gov/info-details/trapper-education-courses">in-person courses</a>, mostly late summer and fall.</span></li>
+          <li><strong>Buy a trapping license</strong><span class="d">On MassFishHunt after you're certified.</span></li>
+          <li><strong>Learn which traps are legal</strong><span class="d">Massachusetts bans foothold and most body-gripping traps on land. Box and cage traps are the main legal option; the course covers the exceptions.</span></li>
+          <li><strong>Mark traps and follow check times</strong><span class="d">Traps must be marked with your identification and checked on a set schedule. Know the furbearer seasons before setting anything.</span></li>
+        </ol>
+      </article>
+
+    </div>
+  </section>
+
+  <section aria-labelledby="t-arch">
+    <h2 id="t-arch">Archery</h2>
+    <p class="lede">Start with a lesson where gear is provided, then add range time. Clubs are only needed later for outdoor and 3D practice.</p>
+    <div class="res" id="arch"></div>
+    <div class="flag">
+      <p style="margin:0 0 6px"><strong>Bowhunting rules in Massachusetts:</strong> bows need at least a 40 lb draw weight; broadheads must be steel and at least 7/8 inch wide; crossbows only with a crossbow permit.</p>
+      <p style="margin:0 0 6px"><strong>Where:</strong> no shooting across or within 150 feet of a paved road, and no hunting within 500 feet of an occupied building without the owner's permission.</p>
+      <p style="margin:0"><strong>License:</strong> hunter ed, a Hunting or Sporting license, and the Archery Stamp. No separate bowhunter course is required.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-fish">
+    <h2 id="t-fish">Places to fish within 30 miles of Framingham</h2>
+    <p class="lede">All open to public fishing with a license. Distances are approximate driving miles from central Framingham. Parking and boat rules vary by town, so check before you go.</p>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Water</th><th>Town</th><th>Miles</th><th>What's there</th><th>Links</th></tr></thead>
+        <tbody id="spots"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-hunt">
+    <h2 id="t-hunt">Places to hunt within 30 miles of Framingham</h2>
+    <p class="lede">Public land open to hunting, most with an extra permit or special rules. Distances are approximate driving miles from central Framingham.</p>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Place</th><th>Town</th><th>Miles</th><th>What to know</th><th>Links</th></tr></thead>
+        <tbody id="hunts"></tbody>
+      </table>
+    </div>
+    <div class="flag">
+      <p style="margin:0 0 6px"><strong>Closed to hunting nearby:</strong> Callahan, Cochituate, Hopkinton, Ashland, Whitehall, and Quinsigamond state parks. Most town conservation land and Sudbury Valley Trustees land is closed too.</p>
+      <p style="margin:0 0 6px"><strong>Private land:</strong> legal with the owner's permission. Written permission is the safe habit.</p>
+      <p style="margin:0"><strong>Find more:</strong> MassWildlife's <a href="https://www.mass.gov/how-to/masswildlife-lands-viewer">Lands Viewer map</a> shows every WMA (all open to hunting, and exempt from town firearm bylaws), and DCR lists <a href="https://www.mass.gov/how-to/hunting-in-massachusetts-state-parks-and-forests">state parks and forests open to hunting</a>. Apps like onX show open areas and boundaries.</p>
+    </div>
+  </section>
+
+
+
+
+</main>
+
+<footer class="wrap">Season dates and fishing rules from MassWildlife (mass.gov). Always confirm current regulations before heading out.</footer>
+
+<script>
+/* ===== Edit here each year ===== */
+const YEAR = 2026;
+const SEASONS = [
+  { group: "Hunting" },
+  { name: "Deer: archery", segs: [["10-05","11-28"]], color: "var(--archery)" },
+  { name: "Deer: shotgun", segs: [["11-30","12-12"]], color: "var(--gun)" },
+  { name: "Deer: primitive", segs: [["12-14","12-31"]], color: "var(--primitive)" },
+  { name: "Wild turkey", note: "Spring and fall", segs: [["04-27","05-23"],["10-05","11-28"]], color: "var(--cranberry)" },
+  { name: "Black bear", segs: [["09-07","12-12"]], color: "var(--bark)" },
+  { name: "Pheasant and quail", segs: [["10-17","12-31"]], color: "var(--gold)" },
+  { name: "Gray squirrel", segs: [["01-01","02-28"],["09-08","12-31"]], color: "var(--olive)" },
+  { name: "Coyote", segs: [["01-01","03-07"],["10-17","12-31"]], color: "var(--maple)" },
+  { group: "Fishing" },
+  { name: "Most freshwater fish", note: "Trout, bass, pike, and more", segs: [["01-01","12-31"]], color: "var(--water)" },
+  { name: "Wachusett and Sudbury", note: "DCR reservoirs, approx.", segs: [["04-04","11-30"]], color: "var(--water)" },
+  { name: "Quabbin Reservoir", note: "DCR, approx.", segs: [["04-18","10-17"]], color: "var(--water)" },
+  { name: "Smelt", segs: [["01-01","02-28"],["05-16","12-31"]], color: "var(--water)" },
+  { name: "Bullfrog and green frog", segs: [["07-16","09-30"]], color: "var(--water)" }
+];
+
+// [water, town, miles, notes, tags, info link]
+const SPOTS = [
+  ["Farm Pond", "Framingham", 1, "Urban pond known for bass, sunfish, perch, and carp. Boat ramp at the end of Lakeview Ave; shore access at Farm Pond Park on Dudley Rd.", ["Bass","Shore"], "https://www.mass.gov/info-details/farm-pond-framingham"],
+  ["Lake Cochituate", "Framingham, Natick, Wayland", 3, "Big lake, mostly inside Cochituate State Park. Stocked with trout spring and fall; also bass, pike, pickerel, crappie. Boat ramp off Rt 30.", ["Stocked trout","Bass","Pike","Shore","Boat ramp"], "https://www.mass.gov/info-details/lake-cochituate"],
+  ["Ashland Reservoir", "Ashland", 5, "Inside Ashland State Park. Trout stocked; a popular local pick for stocked trout.", ["Stocked trout","Shore"], ""],
+  ["Sudbury River", "Ashland, Hopkinton", 5, "Trout-stocked river sections; good for learning stream fishing.", ["Stocked trout","River"], ""],
+  ["Sudbury Reservoir", "Southborough, Marlborough", 5, "DCR water supply reservoir. Seasonal, shore fishing only in designated areas.", ["Seasonal","Shore"], "https://www.mass.gov/info-details/wachusett-reservoir-and-sudbury-reservoir-fishing-guide"],
+  ["Charles River and Dug Pond", "Natick", 6, "Both trout stocked.", ["Stocked trout","River"], ""],
+  ["Hopkinton Reservoir", "Hopkinton, Ashland", 6, "Inside Hopkinton State Park. Stocked with trout.", ["Stocked trout","Shore"], ""],
+  ["Whitehall Reservoir", "Hopkinton", 9, "Trout stocked; larger, quieter water.", ["Stocked trout"], ""],
+  ["Louisa Lake", "Milford", 12, "Trout stocked.", ["Stocked trout"], ""],
+  ["Crystal Lake", "Newton", 12, "Trout stocked city pond.", ["Stocked trout"], ""],
+  ["Walden Pond and White Pond", "Concord", 15, "Both trout stocked. Walden is a state reservation with parking limits on busy days.", ["Stocked trout","Shore"], ""],
+  ["Buckmaster Pond", "Westwood", 17, "Trout stocked.", ["Stocked trout"], ""],
+  ["Brookline Reservoir", "Brookline", 17, "Trout stocked, walking path around the edge.", ["Stocked trout","Shore"], ""],
+  ["Lake Quinsigamond and Jordan Pond", "Shrewsbury, Worcester", 18, "Trout stocked; Quinsigamond is a large lake with lots of access.", ["Stocked trout","Boat ramp"], ""],
+  ["Jamaica Pond", "Boston", 20, "Trout stocked city pond.", ["Stocked trout","Shore"], ""],
+  ["Wachusett Reservoir", "Boylston, Clinton, Sterling", 22, "DCR reservoir with lake trout and salmon. Seasonal, shoreline only from Gate 6 on Rt 70 to Gate 36 on Rt 110.", ["Seasonal","Shore","Lake trout"], "https://www.mass.gov/info-details/wachusett-reservoir-and-sudbury-reservoir-fishing-guide"],
+  ["Mirror Lake", "Harvard", 22, "Trout stocked.", ["Stocked trout"], ""],
+  ["Houghton's Pond", "Milton", 24, "Trout stocked, in the Blue Hills.", ["Stocked trout","Shore"], ""],
+  ["Spot Pond", "Stoneham", 26, "Trout stocked, in the Middlesex Fells.", ["Stocked trout"], ""],
+  ["Sunset Lake", "Braintree", 27, "Trout stocked.", ["Stocked trout"], ""]
+];
+
+// [place, town, miles, notes, tags, info link]
+const HUNTS = [
+  ["Sudbury Reservoir watershed lands", "Southborough, Marlborough", 5, "DCR water supply land around the reservoir plus the Crane Swamp / Walnut Hill area. Deer hunting on designated parcels only; check the DCR map and watershed rules first.", ["Deer","DCR rules"], "https://www.mass.gov/how-to/hunting-in-massachusetts-state-parks-and-forests"],
+  ["Assabet River National Wildlife Refuge", "Sudbury, Maynard, Stow, Hudson", 10, "Deer, turkey, small game, and waterfowl in designated areas. Refuge hunting permit required on top of your state license; the permit comes with a parking pass. Some areas are archery only.", ["Deer","Turkey","Small game","Refuge permit"], "https://www.fws.gov/refuge/assabet-river/visit-us/activities/hunting"],
+  ["Great Meadows National Wildlife Refuge", "Concord, Sudbury, Wayland", 15, "Designated units, including waterfowl hunting on the Sudbury and Concord rivers. Refuge permit required.", ["Deer","Waterfowl","Refuge permit"], "https://www.fws.gov/refuge/great-meadows/visit-us/activities/hunting"],
+  ["Delaney Wildlife Management Area", "Stow, Bolton, Harvard", 18, "Wetland WMA popular for waterfowl. The first days of waterfowl season are by permit and assigned blind; open first come after that.", ["Waterfowl","WMA"], ""],
+  ["Bolton Flats Wildlife Management Area", "Bolton, Lancaster", 22, "Nashua River floodplain. Stocked with pheasant and quail, so blaze orange rules apply during bird season.", ["Pheasant","Upland birds","WMA"], "https://boltontrails.org/map1"],
+  ["Blue Hills Reservation", "Milton, Quincy, Canton", 22, "DCR controlled archery deer hunt in designated zones. Apply for the permit lottery ahead of the season.", ["Deer","Archery","Lottery permit"], "https://www.mass.gov/guides/guide-to-recreation-in-state-parks"],
+  ["Oxbow National Wildlife Refuge", "Harvard, Ayer, Shirley", 25, "Designated hunt units along the Nashua River. Refuge permit required.", ["Deer","Turkey","Refuge permit"], "https://www.fws.gov/refuge/oxbow/visit-us/activities/hunting"]
+];
+
+const ARCHERY = [
+  { h: "Lessons and shops", items: [
+    ["Quest Archery", "https://www.questarchery.club", "Worcester. Beginner classes Fri and Sun, about $30, loaner gear, open evenings. Ask about range passes. 774-493-6090"],
+    ["L.L.Bean Outdoor Discovery archery", "https://www.llbeanoutdoors.com/archery", "Dedham MA (about 30 min), also East Greenwich RI and Glastonbury CT. Gear and instruction included."],
+    ["On the Mark Archery (Newton Parks & Rec)", "https://www.newtonma.gov/government/parks-recreation-culture/recreation-programs/archery", "Beginner classes on safety, form, and range procedures; all equipment provided. Register at newtonmarec.com."]
+  ]},
+  { h: "Clubs for range and 3D practice", items: [
+    ["Hopkinton Sportsmen's Association", "https://www.hsasports.com/archery-range-2/", "Hopkinton. Outdoor archery range; archery committee runs training and range tests."],
+    ["Southborough Rod & Gun Club", "https://www.southboroughrodandgun.com", "Hopkinton. Archery range and a 3D course (life-size foam targets at unknown distances)."]
+  ]}
+];
+
+const RESOURCES = [
+  { h: "Massachusetts", items: [
+    ["MassWildlife calendar", "https://www.mass.gov/info-details/masswildlife-calendar", "Workshops, walks, and fishing clinics statewide"],
+    ["HUNTERcourse Massachusetts", "https://www.huntercourse.com/usa/massachusetts/", "Hunter ed step 1: free online study guide, 16 chapters"],
+    ["Basic Hunter Education courses", "https://www.mass.gov/info-details/basic-hunter-education-courses", "Hunter ed step 2: in-person field day and exam"],
+    ["Hunting with a firearm in MA", "https://www.mass.gov/info-details/hunting-with-a-firearm-in-massachusetts", "Licensing overview; hunter ed cert counts for an FID"],
+    ["Trapper Education courses", "https://www.mass.gov/info-details/trapper-education-courses"],
+    ["Learn to fish events", "https://www.mass.gov/info-details/learn-to-fish-events"],
+    ["MassFishHunt programs", "https://massfishhunt.events.licensing.app/em/programs", "Fly fishing, fly tying, ice fishing"],
+    ["Trout stocking report", "https://www.mass.gov/info-details/trout-stocking-report"]
+  ]},
+  { h: "Rhode Island", items: [
+    ["Hunter ed and skill-building", "https://dem.ri.gov/hunter-education-skill-building"],
+    ["Hunter certification", "https://dem.ri.gov/fish-wildlife/outreach-education/hunter-certification", "Online or hybrid, test appointments"],
+    ["Women's Outdoor Workshops", "https://dem.ri.gov/events/womens-outdoor-workshops-multiple-dates-events"]
+  ]},
+  { h: "New Hampshire", items: [
+    ["Hunter education and field days", "https://www.wildlife.nh.gov/hunting-nh/hunter-education"],
+    ["NH Fish & Game course listings", "https://nh-events-web.s3licensing.com/Event/AllEvents?EventTypeID=166&ClassActivity=21", "Full traditional hunter and bowhunter courses"],
+    ["Let's Go Fishing", "https://www.wildlife.nh.gov/fishing-new-hampshire/learn-fish-lets-go-fishing-program", "Free intro classes; groups need 30 days notice"]
+  ]},
+  { h: "Connecticut", items: [
+    ["Self-study hunter safety", "https://portal.ct.gov/DEEP/Hunting/CEFS/Self-Study-Firearms-Hunter-Safety-Course"],
+    ["Field day sign-up (account)", "https://he.aspirafocus.com/huntersafety/Account/Register?controllingSpc=9", "Log in to see dates"]
+  ]},
+  { h: "Nature and navigation", items: [
+    ["Alliance for Wilderness Engagement", "https://www.eventbrite.com/o/35223489473", "Forest therapy, night sky, and seasonal circles"],
+    ["Orienteering USA permanent courses", "https://orienteeringusa.org/events/permanent-courses/", "Year-round DIY courses; find by ZIP and radius"]
+  ]},
+  { h: "Fly fishing and clubs", items: [
+    ["Backcountry Hunters & Anglers", "https://www.backcountryhunters.org", "New England chapter"],
+    ["Squannacook River TU fly tying", "https://www.swtu.org/learn/flytying/flytying-classes/", "Fitchburg"],
+    ["Western Mass Fly Fishermen", "https://wmffclub.org/fly-tying-classes/", "Ludlow"],
+    ["Greater Boston Trout Unlimited", "https://greaterboston.tu.org"],
+    ["Northeast Fly Fishing School", "https://nhriversguide.com/learn-to-fly-fish/", "Paid"]
+  ]},
+  { h: "Women and LGBTQ+", items: [
+    ["NH Becoming an Outdoors Woman", "https://nhbow.com", "Winter one-day (Feb), fall weekend (Sept)"],
+    ["AMC Women+ activities", "https://activities.outdoors.org/s/?audiences=Women%2B"],
+    ["A Girl & A Gun", "https://www.agirlandagun.org"],
+    ["Pink Pistols", "https://www.pinkpistols.org"],
+    ["Operation Blazing Sword", "https://www.blazingsword.org"]
+  ]}
+];
+/* ===== End of editable data ===== */
+
+const $ = id => document.getElementById(id);
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+
+// Season band
+(function(){
+  const a = new Date(YEAR, 0, 1), b = new Date(YEAR + 1, 0, 1), span = b - a;
+  const pct = d => Math.min(100, Math.max(0, (d - a) / span * 100));
+  const md = (s, end) => { const [m, d] = s.split("-").map(Number); return new Date(YEAR, m - 1, d + (end ? 1 : 0)); };
+  const g = $("band");
+  SEASONS.forEach(s => {
+    if (s.group) { g.appendChild(el("div", "group", s.group)); return; }
+    const lab = el("div", "band-label", s.name);
+    if (s.note) lab.appendChild(el("span", null, s.note));
+    const tr = el("div", "track");
+    s.segs.forEach(([f, t]) => {
+      const bar = el("div", "bar");
+      const l = pct(md(f)), r = pct(md(t, true));
+      bar.style.cssText = `left:${l}%;width:${r - l}%;background:${s.color}`;
+      bar.title = `${s.name}: ${f} to ${t}`;
+      tr.appendChild(bar);
+    });
+    g.append(lab, tr);
+  });
+  const m = el("div", "months");
+  ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"].forEach(x => m.appendChild(el("span", null, x)));
+  g.append(el("div"), m);
+  const now = new Date();
+  if (now >= a && now < b) {
+    const t = el("div", "today"); t.appendChild(el("span", null, "Today"));
+    t.style.left = `calc(190px + (100% - 190px) * ${pct(now) / 100})`;
+    g.appendChild(t);
+  }
+})();
+
+// Tables
+function fillTable(id, rows, infoLabel){
+  const tb = $(id);
+  rows.slice().sort((x, y) => x[2] - y[2]).forEach(([name, town, mi, note, tags, info]) => {
+    const tr = el("tr");
+    tr.appendChild(el("td", null, name)).style.fontWeight = 600;
+    tr.appendChild(el("td", null, town));
+    tr.appendChild(el("td", "mi", "~" + mi));
+    const td = el("td", null, note);
+    const tg = el("div"); tags.forEach(t => tg.appendChild(el("span", "tag t-" + t.toLowerCase().split(" ")[t.toLowerCase().startsWith("stocked") ? 1 : 0], t))); td.appendChild(tg);
+    tr.appendChild(td);
+    const lk = el("td", "links");
+    const map = el("a", null, "Map"); map.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(name.split(" and ")[0] + " " + town.split(",")[0] + " MA"); map.rel = "noopener";
+    lk.appendChild(map);
+    if (info) { const i = el("a", null, infoLabel); i.href = info; i.rel = "noopener"; lk.appendChild(i); }
+    tr.appendChild(lk);
+    tb.appendChild(tr);
+  });
+}
+fillTable("spots", SPOTS, "MassWildlife");
+fillTable("hunts", HUNTS, "Rules");
+
+// Card groups
+function fillCards(id, groups){
+  const box = $(id);
+  groups.forEach((g, gi) => {
+    const sec = el("div", "card"); sec.dataset.i = gi % 6; sec.appendChild(el("h3", null, g.h));
+    const ul = el("ul");
+    g.items.forEach(([name, url, note]) => {
+      const li = el("li");
+      if (url) { const a = el("a", null, name); a.href = url; a.rel = "noopener"; li.appendChild(a); }
+      else li.appendChild(el("strong", null, name));
+      if (note) li.appendChild(el("span", null, note));
+      ul.appendChild(li);
+    });
+    sec.appendChild(ul); box.appendChild(sec);
+  });
+}
+fillCards("res", RESOURCES);
+fillCards("arch", ARCHERY);
+
+// Masonry: place each card in the shortest column, keeping reading order left to right
+function masonry(box){
+  const cards = box._cards || (box._cards = [...box.children]);
+  const w = box.clientWidth, n = Math.max(1, Math.min(4, Math.floor((w + 18) / (240 + 18))));
+  if (box._n === n) return; box._n = n;
+  box.innerHTML = "";
+  const cols = Array.from({length: n}, () => { const c = el("div", "col"); box.appendChild(c); return c; });
+  cards.forEach(card => {
+    const c = cols.reduce((a, b) => (b.offsetHeight < a.offsetHeight ? b : a));
+    c.appendChild(card);
+  });
+}
+const boxes = [$("res"), $("arch")];
+const layout = () => boxes.forEach(masonry);
+layout();
+addEventListener("resize", layout);
+if (document.fonts) document.fonts.ready.then(() => { boxes.forEach(b => b._n = 0); layout(); });
+</script>
+</body>
+</html>
