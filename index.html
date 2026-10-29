@@ -53,6 +53,7 @@ header p{max-width:60ch;margin:8px 0 0;color:var(--muted)}
 .band-note{margin:12px 0 0;font-size:.85rem;color:var(--muted)}
 
 main{padding:48px 0 60px;display:grid;gap:56px}
+main > section{min-width:0}
 
 .flag{margin-top:12px;padding:10px 12px;border-left:4px solid var(--blaze);background:var(--paper);font-size:.88rem}
 
@@ -176,6 +177,12 @@ footer{border-top:8px solid transparent;border-image:var(--fall) 1;padding-top:1
     <h2 id="t-prog">Where I'm at</h2>
     <p class="lede">Not hunting the 2026 season. Getting certified and licensed, and spending the rest of the year learning.</p>
     <div class="res" id="prog"></div>
+  </section>
+
+  <section aria-labelledby="t-next">
+    <h2 id="t-next">After the field day</h2>
+    <p class="lede">What the hunter ed certificate unlocks, and what each one still needs. Licenses are sold on <a href="https://massfishhunt.mass.gov/">MassFishHunt</a> and run on the calendar year.</p>
+    <div class="res" id="next"></div>
   </section>
 
   <section aria-labelledby="t-res">
@@ -321,11 +328,35 @@ const PROGRESS = [
     ["Archery for All (Wayland Rec)", "", "Recurve lessons, Fridays Nov 20 to Dec 18", "2026-12-18"],
     ["Deer Field Dressing 101", "https://www.mass.gov/info-details/masswildlife-calendar", "MassWildlife, Nov 29, on the waitlist", "2026-11-29"],
     ["Deer Processing", "https://www.mass.gov/info-details/masswildlife-calendar", "MassWildlife, Dec 6, on the waitlist", "2026-12-06"]
+  ]}
+];
+
+// After the field day: [step, link or "", detail]
+const NEXT = [
+  { h: "FID card (rifles and shotguns)", items: [
+    ["Use your MA hunter ed certificate", "", "It qualifies you for an FID. Out-of-state hunter ed does not count, and hunter ed is not accepted for a License to Carry."],
+    ["Apply at your local police department", "https://www.mass.gov/info-details/hunting-with-a-firearm-in-massachusetts", "Ask the firearms licensing office for the application, fee, and an appointment. Expect fingerprints and a background check."],
+    ["Plan for the wait", "", "Processing can take weeks to a few months depending on the town."],
+    ["Buy and store legally", "", "Buy from a licensed dealer. Store and transport locked or unloaded and cased."]
   ]},
-  { h: "After certification", items: [
-    ["Apply for an FID", "https://www.mass.gov/info-details/hunting-with-a-firearm-in-massachusetts", "Rifle and shotgun only; through the local police department"],
-    ["2027 Sporting license + Archery Stamp", "https://massfishhunt.mass.gov/", "Licenses go on sale for the new year in December"],
-    ["Trapper Education", "https://www.mass.gov/info-details/trapper-education-courses", "Courses mostly late summer and fall"]
+  { h: "Hunting license and stamps", items: [
+    ["Buy a Sporting license", "https://massfishhunt.mass.gov/", "Covers hunting and freshwater fishing. Next year's licenses go on sale in December. Resident licenses include 2 antlered deer tags."],
+    ["Add stamps for what you'll hunt", "", "Archery Stamp for archery deer season; Primitive Firearms Stamp for muzzleloader. No separate bowhunter course is needed."],
+    ["Waterfowl extras", "", "State waterfowl stamp, federal duck stamp, and HIP registration."],
+    ["Antlerless deer permits", "", "Apply in summer on MassFishHunt."],
+    ["In the field", "https://www.mass.gov/hunting-regulations", "Tag deer, turkey, and bear right away and report online. Wear 500 sq in of blaze orange during shotgun and primitive seasons. No Sunday hunting."]
+  ]},
+  { h: "Fishing", items: [
+    ["Freshwater license", "", "Included in the Sporting license. Carry it while fishing."],
+    ["Saltwater permit", "https://massfishhunt.mass.gov/", "Separate, and required for fishing on the coast."],
+    ["Gear rules", "", "Max 2 hooks in open water, 5 ice fishing. No lead sinkers or jigs under 1 oz in fresh water."],
+    ["Find stocked water", "https://www.mass.gov/info-details/trout-stocking-report", "Trout are stocked spring and fall; check the daily report."]
+  ]},
+  { h: "Trapping", items: [
+    ["Take Trapper Education", "https://www.mass.gov/info-details/trapper-education-courses", "A separate course from hunter ed, required for first-time trappers. Mostly late summer and fall."],
+    ["Buy a trapping license", "https://massfishhunt.mass.gov/", "On MassFishHunt after you're certified."],
+    ["Know the legal traps", "", "Foothold and most body-gripping traps are banned on land. Box and cage traps are the main legal option."],
+    ["Mark and check traps", "", "Mark traps with your ID, check them on the required schedule, and know the furbearer seasons."]
   ]}
 ];
 
@@ -443,6 +474,7 @@ function fillCards(id, groups){
   });
 }
 fillCards("prog", PROGRESS);
+fillCards("next", NEXT);
 fillCards("res", RESOURCES);
 fillCards("arch", ARCHERY);
 
@@ -458,7 +490,7 @@ function masonry(box){
     c.appendChild(card);
   });
 }
-const boxes = [$("prog"), $("res"), $("arch")];
+const boxes = [$("prog"), $("next"), $("res"), $("arch")];
 const layout = () => boxes.forEach(masonry);
 layout();
 addEventListener("resize", layout);
