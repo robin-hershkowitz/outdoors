@@ -54,18 +54,6 @@ header p{max-width:60ch;margin:8px 0 0;color:var(--muted)}
 
 main{padding:48px 0 60px;display:grid;gap:56px}
 
-/* License steps */
-.paths{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 36px}
-@media (max-width:820px){.paths{grid-template-columns:1fr}}
-.path{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--hemlock);border-radius:6px;padding:20px 22px}
-.path.gun{border-top-color:var(--blaze)}
-.path.fish{border-top-color:var(--water)}
-.path p.intro{margin:0 0 12px;color:var(--muted);font-size:.92rem}
-.steps{margin:0;padding-left:1.4em}
-.steps li{margin-bottom:12px;padding-left:4px}
-.steps li::marker{font-family:var(--serif);font-weight:700;color:var(--blaze)}
-.steps strong{display:block}
-.steps .d{font-size:.92rem}
 .flag{margin-top:12px;padding:10px 12px;border-left:4px solid var(--blaze);background:var(--paper);font-size:.88rem}
 
 /* Fishing spots */
@@ -145,11 +133,6 @@ main > section:nth-of-type(6n+6){--c:var(--bark)}
 .res .card[data-i="5"]{--c2:var(--bark)}
 .res h3{border-bottom:0;padding-bottom:0;color:var(--c2)}
 
-.path{box-shadow:0 10px 22px -18px rgba(106,68,40,.5);border-top-width:5px;border-top-color:var(--maple);background:linear-gradient(180deg,color-mix(in srgb,var(--maple) 6%,var(--card)),var(--card) 110px)}
-.path.gun{border-top-color:var(--pumpkin);background:linear-gradient(180deg,color-mix(in srgb,var(--pumpkin) 7%,var(--card)),var(--card) 110px)}
-.path.fish{border-top-color:var(--water);background:linear-gradient(180deg,color-mix(in srgb,var(--water) 7%,var(--card)),var(--card) 110px)}
-.path:nth-child(4){border-top-color:var(--bark);background:linear-gradient(180deg,color-mix(in srgb,var(--bark) 7%,var(--card)),var(--card) 110px)}
-.steps li::marker{color:var(--pumpkin)}
 
 .flag{border-left:5px solid var(--gold);background:color-mix(in srgb,var(--gold) 12%,var(--card));border-radius:0 6px 6px 0}
 
@@ -209,64 +192,6 @@ footer{border-top:8px solid transparent;border-image:var(--fall) 1;padding-top:1
     <p class="band-note">2026 seasons, statewide zones. No hunting on Sundays in Massachusetts. Reservoir dates are set by DCR each year and can shift with ice.</p>
   </section>
 
-  <section aria-labelledby="t-lic">
-    <h2 id="t-lic">Getting licensed in Massachusetts</h2>
-    <p class="lede">Step by step, from zero to legal. Fees and license sales are all on <a href="https://massfishhunt.mass.gov/">MassFishHunt</a>. Licenses run on the calendar year and expire Dec 31.</p>
-
-    <div class="paths">
-
-      <article class="path">
-        <h3>Hunting</h3>
-        <p class="intro">Covers bow and firearm hunting. Everyone new to hunting starts here.</p>
-        <ol class="steps">
-          <li><strong>Take the online hunter ed course</strong><span class="d">Work through MassWildlife's online Basic Hunter Education <a href="https://www.huntercourse.com/usa/massachusetts/">study material</a>. It's free and self-paced, and you need it done before you can sign up for a field day.</span></li>
-          <li><strong>Register for and attend a field day</strong><span class="d">A free, in-person day with instructors covering safe firearm handling, ethics, and laws, ending in a written test. Seats fill fast, so watch the <a href="https://www.mass.gov/info-details/basic-hunter-education-courses">course list</a> and use waitlists.</span></li>
-          <li><strong>Get your certificate</strong><span class="d">Pass the test and you're certified for life. Keep a copy; you'll need it to buy your first license and for an FID.</span></li>
-          <li><strong>Buy a Hunting or Sporting license</strong><span class="d">Sporting covers hunting and freshwater fishing together. Resident licenses include 2 antlered deer tags good statewide.</span></li>
-          <li><strong>Add stamps and permits for what you'll hunt</strong><span class="d">Archery Stamp for the archery deer season. Primitive Firearms Stamp for the muzzleloader season. Waterfowl also needs a state waterfowl stamp, a federal duck stamp, and HIP registration. Antlerless deer permits are applied for in summer on MassFishHunt.</span></li>
-          <li><strong>In the field: tag, report, wear orange</strong><span class="d">Tag deer, turkey, and bear right away and report the harvest online. During shotgun and primitive seasons, wear 500 square inches of blaze orange on chest, back, and head.</span></li>
-        </ol>
-        <div class="flag">Bowhunting needs no extra course in Massachusetts: hunter ed, a license, and the Archery Stamp.</div>
-      </article>
-
-      <article class="path gun">
-        <h3>FID card (rifles and shotguns)</h3>
-        <p class="intro">A hunting license does not let you own or carry a gun. To possess a rifle or shotgun you also need a Firearms Identification Card.</p>
-        <ol class="steps">
-          <li><strong>Get a qualifying safety certificate</strong><span class="d">A Massachusetts Basic Hunter Education certificate counts for an FID. So does a state-approved Basic Firearms Safety course. Hunter ed from another state does not count here.</span></li>
-          <li><strong>Know the 2026 rules</strong><span class="d">Since April 2, 2026, safety courses must cover MA firearms law, storage, and suicide prevention, and the law calls for live fire. Live fire isn't enforced yet while regulations are finalized. Hunter ed is not accepted for a License to Carry, only an FID.</span></li>
-          <li><strong>Apply through your local police department</strong><span class="d">Contact your town's firearms licensing office for the application, fee, and an appointment. Expect fingerprinting, a background check, and possibly an interview or references.</span></li>
-          <li><strong>Wait for approval</strong><span class="d">Processing can take weeks to a few months depending on the town. Plan ahead of the season you want to hunt.</span></li>
-          <li><strong>Buy and store legally</strong><span class="d">Buy from a licensed dealer, register the transaction as required, and follow MA storage and transport laws (locked or unloaded and cased).</span></li>
-        </ol>
-        <div class="flag">Rules changed a lot in 2024 to 2026. Confirm current requirements with your police department and the <a href="https://www.mass.gov/info-details/hunting-with-a-firearm-in-massachusetts">MassWildlife firearms page</a>.</div>
-      </article>
-
-      <article class="path fish">
-        <h3>Fishing</h3>
-        <p class="intro">The easiest place to start: no course required.</p>
-        <ol class="steps">
-          <li><strong>Buy a freshwater fishing license</strong><span class="d">Required at age 15 and up (free for ages 15 to 17 and 70 and older). Included in a Sporting license. Carry it while fishing.</span></li>
-          <li><strong>Add a saltwater permit for the coast</strong><span class="d">Fishing in salt water needs a separate Massachusetts recreational saltwater permit, also on MassFishHunt.</span></li>
-          <li><strong>Learn the basic gear rules</strong><span class="d">Max 2 hooks in open water, 5 when ice fishing. Lead sinkers and jigs under 1 ounce are banned in fresh water. Some fish must be released immediately.</span></li>
-          <li><strong>Check limits and special waters</strong><span class="d">Most species are open all year, with daily limits and minimum lengths. Wachusett, Sudbury, and Quabbin reservoirs have their own seasons and shoreline rules.</span></li>
-          <li><strong>Find stocked water</strong><span class="d">MassWildlife stocks trout in spring and fall. Check the <a href="https://www.mass.gov/info-details/trout-stocking-report">daily stocking report</a> before you go.</span></li>
-        </ol>
-      </article>
-
-      <article class="path">
-        <h3>Trapping</h3>
-        <p class="intro">Separate course and license from hunting.</p>
-        <ol class="steps">
-          <li><strong>Take Trapper Education</strong><span class="d">Required for first-time trappers. MassWildlife runs a limited number of <a href="https://www.mass.gov/info-details/trapper-education-courses">in-person courses</a>, mostly late summer and fall.</span></li>
-          <li><strong>Buy a trapping license</strong><span class="d">On MassFishHunt after you're certified.</span></li>
-          <li><strong>Learn which traps are legal</strong><span class="d">Massachusetts bans foothold and most body-gripping traps on land. Box and cage traps are the main legal option; the course covers the exceptions.</span></li>
-          <li><strong>Mark traps and follow check times</strong><span class="d">Traps must be marked with your identification and checked on a set schedule. Know the furbearer seasons before setting anything.</span></li>
-        </ol>
-      </article>
-
-    </div>
-  </section>
 
   <section aria-labelledby="t-arch">
     <h2 id="t-arch">Archery</h2>
@@ -389,7 +314,7 @@ const PROGRESS = [
     ["Women's Deer Hunting Seminar", "https://www.mass.gov/info-details/becoming-an-outdoors-woman-bow", "MassWildlife BOW, Oct 2026"]
   ]},
   { h: "In progress", items: [
-    ["Hunter ed online study guide", "https://www.huntercourse.com/usa/massachusetts/", "Must be finished before the field day"]
+    ["Hunter ed online study guide", "", "Must be finished before the field day"]
   ]},
   { h: "Up next", items: [
     ["Hunter ed field day", "", "Registered, Nov 16. Passing gives a lifetime certificate.", "2026-11-16"],
@@ -408,27 +333,18 @@ const RESOURCES = [
   { h: "Massachusetts", items: [
     ["MassWildlife calendar", "https://www.mass.gov/info-details/masswildlife-calendar", "Workshops, walks, and fishing clinics statewide"],
     ["Hunting regulations", "https://www.mass.gov/hunting-regulations", "Seasons, bag limits, and rules by species"],
-    ["HUNTERcourse Massachusetts", "https://www.huntercourse.com/usa/massachusetts/", "Hunter ed step 1: free online study guide, 16 chapters"],
-    ["Basic Hunter Education courses", "https://www.mass.gov/info-details/basic-hunter-education-courses", "Hunter ed step 2: in-person field day and exam"],
-    ["Hunting with a firearm in MA", "https://www.mass.gov/info-details/hunting-with-a-firearm-in-massachusetts", "Licensing overview; hunter ed cert counts for an FID"],
+    ["Hunting with a firearm in MA", "https://www.mass.gov/info-details/hunting-with-a-firearm-in-massachusetts", "FID and firearm licensing overview"],
     ["Trapper Education courses", "https://www.mass.gov/info-details/trapper-education-courses"],
     ["Learn to fish events", "https://www.mass.gov/info-details/learn-to-fish-events"],
     ["MassFishHunt programs", "https://massfishhunt.events.licensing.app/em/programs", "Fly fishing, fly tying, ice fishing"],
     ["Trout stocking report", "https://www.mass.gov/info-details/trout-stocking-report"]
   ]},
   { h: "Rhode Island", items: [
-    ["Hunter ed and skill-building", "https://dem.ri.gov/hunter-education-skill-building"],
-    ["Hunter certification", "https://dem.ri.gov/fish-wildlife/outreach-education/hunter-certification", "Online or hybrid, test appointments"],
+    ["Skill-building workshops", "https://dem.ri.gov/hunter-education-skill-building", "Learn to shoot, deer prep, trapping"],
     ["Women's Outdoor Workshops", "https://dem.ri.gov/events/womens-outdoor-workshops-multiple-dates-events"]
   ]},
   { h: "New Hampshire", items: [
-    ["Hunter education and field days", "https://www.wildlife.nh.gov/hunting-nh/hunter-education"],
-    ["NH Fish & Game course listings", "https://nh-events-web.s3licensing.com/Event/AllEvents?EventTypeID=166&ClassActivity=21", "Full traditional hunter and bowhunter courses"],
     ["Let's Go Fishing", "https://www.wildlife.nh.gov/fishing-new-hampshire/learn-fish-lets-go-fishing-program", "Free intro classes; groups need 30 days notice"]
-  ]},
-  { h: "Connecticut", items: [
-    ["Self-study hunter safety", "https://portal.ct.gov/DEEP/Hunting/CEFS/Self-Study-Firearms-Hunter-Safety-Course"],
-    ["Field day sign-up (account)", "https://he.aspirafocus.com/huntersafety/Account/Register?controllingSpc=9", "Log in to see dates"]
   ]},
   { h: "Nature and navigation", items: [
     ["Alliance for Wilderness Engagement", "https://www.eventbrite.com/o/35223489473", "Forest therapy, night sky, and seasonal circles"],
