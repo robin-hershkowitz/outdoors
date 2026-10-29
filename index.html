@@ -381,7 +381,9 @@ const ARCHERY = [
   ]}
 ];
 
-// Progress: [name, link or "", note]. Keep dates, drop times and addresses (this page is public).
+// Progress: [name, link or "", note, last date "YYYY-MM-DD" (Up next only; not shown)].
+// Keep dates, drop times and addresses (this page is public).
+// The nightly dashboard task asks Robin in #outdoors after an Up next item's last date passes.
 const PROGRESS = [
   { h: "Done", items: [
     ["Women's Deer Hunting Seminar", "https://www.mass.gov/info-details/becoming-an-outdoors-woman-bow", "MassWildlife BOW, Oct 2026"]
@@ -390,9 +392,10 @@ const PROGRESS = [
     ["Hunter ed online study guide", "https://www.huntercourse.com/usa/massachusetts/", "Must be finished before the field day"]
   ]},
   { h: "Up next", items: [
-    ["Hunter ed field day", "", "Registered, Nov 16. Passing gives a lifetime certificate."],
-    ["Archery for All (Wayland Rec)", "", "Recurve lessons, Fridays Nov 20 to Dec 18"],
-    ["Deer field dressing and processing", "https://www.mass.gov/info-details/masswildlife-calendar", "MassWildlife classes Nov 29 and Dec 6, on the waitlist"]
+    ["Hunter ed field day", "", "Registered, Nov 16. Passing gives a lifetime certificate.", "2026-11-16"],
+    ["Archery for All (Wayland Rec)", "", "Recurve lessons, Fridays Nov 20 to Dec 18", "2026-12-18"],
+    ["Deer Field Dressing 101", "https://www.mass.gov/info-details/masswildlife-calendar", "MassWildlife, Nov 29, on the waitlist", "2026-11-29"],
+    ["Deer Processing", "https://www.mass.gov/info-details/masswildlife-calendar", "MassWildlife, Dec 6, on the waitlist", "2026-12-06"]
   ]},
   { h: "After certification", items: [
     ["Apply for an FID", "https://www.mass.gov/info-details/hunting-with-a-firearm-in-massachusetts", "Rifle and shotgun only; through the local police department"],
