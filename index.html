@@ -189,9 +189,14 @@ footer{border-top:8px solid transparent;border-image:var(--fall) 1;padding-top:1
 
 <main class="wrap">
 
+  <section aria-labelledby="t-prog">
+    <h2 id="t-prog">Where I'm at</h2>
+    <p class="lede">Not hunting the 2026 season. Getting certified and licensed, and spending the rest of the year learning.</p>
+    <div class="res" id="prog"></div>
+  </section>
+
   <section aria-labelledby="t-res">
     <h2 id="t-res">Where I find events</h2>
-    
     <div class="res" id="res"></div>
   </section>
 
@@ -214,7 +219,7 @@ footer{border-top:8px solid transparent;border-image:var(--fall) 1;padding-top:1
         <h3>Hunting</h3>
         <p class="intro">Covers bow and firearm hunting. Everyone new to hunting starts here.</p>
         <ol class="steps">
-          <li><strong>Take the online hunter ed course</strong><span class="d">Work through MassWildlife's online Basic Hunter Education study material. It's free and self-paced, and you need it done before you can sign up for a field day.</span></li>
+          <li><strong>Take the online hunter ed course</strong><span class="d">Work through MassWildlife's online Basic Hunter Education <a href="https://www.huntercourse.com/usa/massachusetts/">study material</a>. It's free and self-paced, and you need it done before you can sign up for a field day.</span></li>
           <li><strong>Register for and attend a field day</strong><span class="d">A free, in-person day with instructors covering safe firearm handling, ethics, and laws, ending in a written test. Seats fill fast, so watch the <a href="https://www.mass.gov/info-details/basic-hunter-education-courses">course list</a> and use waitlists.</span></li>
           <li><strong>Get your certificate</strong><span class="d">Pass the test and you're certified for life. Keep a copy; you'll need it to buy your first license and for an FID.</span></li>
           <li><strong>Buy a Hunting or Sporting license</strong><span class="d">Sporting covers hunting and freshwater fishing together. Resident licenses include 2 antlered deer tags good statewide.</span></li>
@@ -306,7 +311,7 @@ footer{border-top:8px solid transparent;border-image:var(--fall) 1;padding-top:1
 
 </main>
 
-<footer class="wrap">Season dates and fishing rules from MassWildlife (mass.gov). Always confirm current regulations before heading out.</footer>
+<footer class="wrap">Season dates and fishing rules from MassWildlife (mass.gov). Always confirm current regulations before heading out. Last updated Oct 28, 2026.</footer>
 
 <script>
 /* ===== Edit here each year ===== */
@@ -358,9 +363,9 @@ const HUNTS = [
   ["Sudbury Reservoir watershed lands", "Southborough, Marlborough", 5, "DCR water supply land around the reservoir plus the Crane Swamp / Walnut Hill area. Deer hunting on designated parcels only; check the DCR map and watershed rules first.", ["Deer","DCR rules"], "https://www.mass.gov/how-to/hunting-in-massachusetts-state-parks-and-forests"],
   ["Assabet River National Wildlife Refuge", "Sudbury, Maynard, Stow, Hudson", 10, "Deer, turkey, small game, and waterfowl in designated areas. Refuge hunting permit required on top of your state license; the permit comes with a parking pass. Some areas are archery only.", ["Deer","Turkey","Small game","Refuge permit"], "https://www.fws.gov/refuge/assabet-river/visit-us/activities/hunting"],
   ["Great Meadows National Wildlife Refuge", "Concord, Sudbury, Wayland", 15, "Designated units, including waterfowl hunting on the Sudbury and Concord rivers. Refuge permit required.", ["Deer","Waterfowl","Refuge permit"], "https://www.fws.gov/refuge/great-meadows/visit-us/activities/hunting"],
-  ["Delaney Wildlife Management Area", "Stow, Bolton, Harvard", 18, "Wetland WMA popular for waterfowl. The first days of waterfowl season are by permit and assigned blind; open first come after that.", ["Waterfowl","WMA"], ""],
-  ["Bolton Flats Wildlife Management Area", "Bolton, Lancaster", 22, "Nashua River floodplain. Stocked with pheasant and quail, so blaze orange rules apply during bird season.", ["Pheasant","Upland birds","WMA"], "https://boltontrails.org/map1"],
-  ["Blue Hills Reservation", "Milton, Quincy, Canton", 22, "DCR controlled archery deer hunt in designated zones. Apply for the permit lottery ahead of the season.", ["Deer","Archery","Lottery permit"], "https://www.mass.gov/guides/guide-to-recreation-in-state-parks"],
+  ["Delaney Wildlife Management Area", "Stow, Bolton, Harvard", 18, "Wetland WMA popular for waterfowl. The first days of waterfowl season are by permit and assigned blind; open first come after that.", ["Waterfowl","WMA"], "https://www.mass.gov/info-details/delaney-wma"],
+  ["Bolton Flats Wildlife Management Area", "Bolton, Lancaster", 22, "Nashua River floodplain. Stocked with pheasant and quail, so blaze orange rules apply during bird season.", ["Pheasant","Upland birds","WMA"], "https://www.mass.gov/info-details/bolton-flats-wma"],
+  ["Blue Hills Reservation", "Milton, Quincy, Canton", 22, "DCR controlled archery deer hunt, Mon to Thu in November (2026: Nov 2 to 25). Licensed hunters apply in August; up to 250 permits, and a mandatory orientation if selected.", ["Deer","Archery","Lottery permit"], "https://www.mass.gov/news/dcr-opens-applications-for-2026-controlled-deer-hunting-at-blue-hills-reservation"],
   ["Oxbow National Wildlife Refuge", "Harvard, Ayer, Shirley", 25, "Designated hunt units along the Nashua River. Refuge permit required.", ["Deer","Turkey","Refuge permit"], "https://www.fws.gov/refuge/oxbow/visit-us/activities/hunting"]
 ];
 
@@ -368,7 +373,7 @@ const ARCHERY = [
   { h: "Lessons and shops", items: [
     ["Quest Archery", "https://www.questarchery.club", "Worcester. Beginner classes Fri and Sun, about $30, loaner gear, open evenings. Ask about range passes. 774-493-6090"],
     ["L.L.Bean Outdoor Discovery archery", "https://www.llbeanoutdoors.com/archery", "Dedham MA (about 30 min), also East Greenwich RI and Glastonbury CT. Gear and instruction included."],
-    ["On the Mark Archery (Newton Parks & Rec)", "https://www.newtonma.gov/government/parks-recreation-culture/recreation-programs/archery", "Beginner classes on safety, form, and range procedures; all equipment provided. Register at newtonmarec.com."]
+    ["On the Mark Archery (Newton Parks & Rec)", "https://www.newtonma.gov/government/parks-recreation-culture/recreation-programs/archery", "Beginner classes on safety, form, and range procedures; all equipment provided. Register at newtonmarec.com. Also teaches Wayland Rec's recurve Archery for All sessions."]
   ]},
   { h: "Clubs for range and 3D practice", items: [
     ["Hopkinton Sportsmen's Association", "https://www.hsasports.com/archery-range-2/", "Hopkinton. Outdoor archery range; archery committee runs training and range tests."],
@@ -376,9 +381,30 @@ const ARCHERY = [
   ]}
 ];
 
+// Progress: [name, link or "", note]. Keep dates, drop times and addresses (this page is public).
+const PROGRESS = [
+  { h: "Done", items: [
+    ["Women's Deer Hunting Seminar", "https://www.mass.gov/info-details/becoming-an-outdoors-woman-bow", "MassWildlife BOW, Oct 2026"]
+  ]},
+  { h: "In progress", items: [
+    ["Hunter ed online study guide", "https://www.huntercourse.com/usa/massachusetts/", "Must be finished before the field day"]
+  ]},
+  { h: "Up next", items: [
+    ["Hunter ed field day", "", "Registered, Nov 16. Passing gives a lifetime certificate."],
+    ["Archery for All (Wayland Rec)", "", "Recurve lessons, Fridays Nov 20 to Dec 18"],
+    ["Deer field dressing and processing", "https://www.mass.gov/info-details/masswildlife-calendar", "MassWildlife classes Nov 29 and Dec 6, on the waitlist"]
+  ]},
+  { h: "After certification", items: [
+    ["Apply for an FID", "https://www.mass.gov/info-details/hunting-with-a-firearm-in-massachusetts", "Rifle and shotgun only; through the local police department"],
+    ["2027 Sporting license + Archery Stamp", "https://massfishhunt.mass.gov/", "Licenses go on sale for the new year in December"],
+    ["Trapper Education", "https://www.mass.gov/info-details/trapper-education-courses", "Courses mostly late summer and fall"]
+  ]}
+];
+
 const RESOURCES = [
   { h: "Massachusetts", items: [
     ["MassWildlife calendar", "https://www.mass.gov/info-details/masswildlife-calendar", "Workshops, walks, and fishing clinics statewide"],
+    ["Hunting regulations", "https://www.mass.gov/hunting-regulations", "Seasons, bag limits, and rules by species"],
     ["HUNTERcourse Massachusetts", "https://www.huntercourse.com/usa/massachusetts/", "Hunter ed step 1: free online study guide, 16 chapters"],
     ["Basic Hunter Education courses", "https://www.mass.gov/info-details/basic-hunter-education-courses", "Hunter ed step 2: in-person field day and exam"],
     ["Hunting with a firearm in MA", "https://www.mass.gov/info-details/hunting-with-a-firearm-in-massachusetts", "Licensing overview; hunter ed cert counts for an FID"],
@@ -403,10 +429,11 @@ const RESOURCES = [
   ]},
   { h: "Nature and navigation", items: [
     ["Alliance for Wilderness Engagement", "https://www.eventbrite.com/o/35223489473", "Forest therapy, night sky, and seasonal circles"],
-    ["Orienteering USA permanent courses", "https://orienteeringusa.org/events/permanent-courses/", "Year-round DIY courses; find by ZIP and radius"]
+    ["Orienteering USA permanent courses", "https://orienteeringusa.org/events/permanent-courses/", "Year-round DIY courses; find by ZIP and radius"],
+    ["Ample Access Outdoors", "https://linktr.ee/ampleaccessoutdoors", "Saturday group hikes, Level 1 and 2, MA and NH; Eventbrite sign-up"]
   ]},
   { h: "Fly fishing and clubs", items: [
-    ["Backcountry Hunters & Anglers", "https://www.backcountryhunters.org", "New England chapter"],
+    ["New England Backcountry Hunters & Anglers", "https://www.backcountryhunters.org/media/tag/new-england-events", "Chapter events, meetups, and work days"],
     ["Western Mass Fly Fishermen", "https://wmffclub.org/fly-tying-classes/", "Ludlow"],
     ["Greater Boston Trout Unlimited", "https://greaterboston.tu.org"],
     ["Northeast Fly Fishing School", "https://nhriversguide.com/learn-to-fly-fish/", "Paid"]
@@ -477,7 +504,7 @@ function fillTable(id, rows, infoLabel){
     tb.appendChild(tr);
   });
 }
-fillTable("spots", SPOTS, "MassWildlife");
+fillTable("spots", SPOTS, "Info");
 fillTable("hunts", HUNTS, "Rules");
 
 // Card groups
@@ -496,6 +523,7 @@ function fillCards(id, groups){
     sec.appendChild(ul); box.appendChild(sec);
   });
 }
+fillCards("prog", PROGRESS);
 fillCards("res", RESOURCES);
 fillCards("arch", ARCHERY);
 
@@ -511,7 +539,7 @@ function masonry(box){
     c.appendChild(card);
   });
 }
-const boxes = [$("res"), $("arch")];
+const boxes = [$("prog"), $("res"), $("arch")];
 const layout = () => boxes.forEach(masonry);
 layout();
 addEventListener("resize", layout);
