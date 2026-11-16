@@ -173,12 +173,6 @@ footer{border-top:8px solid transparent;border-image:var(--fall) 1;padding-top:1
 
 <main class="wrap">
 
-  <section aria-labelledby="t-prog">
-    <h2 id="t-prog">Where I'm at</h2>
-    <p class="lede">Not hunting the 2026 season. Getting certified and licensed, and spending the rest of the year learning.</p>
-    <div class="res" id="prog"></div>
-  </section>
-
   <section aria-labelledby="t-next">
     <h2 id="t-next">After the field day</h2>
     <p class="lede">What the hunter ed certificate unlocks, and what each one still needs. Licenses are sold on <a href="https://massfishhunt.mass.gov/">MassFishHunt</a> and run on the calendar year.</p>
@@ -310,24 +304,6 @@ const ARCHERY = [
   { h: "Clubs for range and 3D practice", items: [
     ["Hopkinton Sportsmen's Association", "https://www.hsasports.com/archery-range-2/", "Hopkinton. Outdoor archery range; archery committee runs training and range tests."],
     ["Southborough Rod & Gun Club", "https://www.southboroughrodandgun.com", "Hopkinton. Archery range and a 3D course (life-size foam targets at unknown distances)."]
-  ]}
-];
-
-// Progress: [name, link or "", note, last date "YYYY-MM-DD" (Up next only; not shown)].
-// Keep dates, drop times and addresses (this page is public).
-// The nightly dashboard task asks Robin in #outdoors after an Up next item's last date passes.
-const PROGRESS = [
-  { h: "Done", items: [
-    ["Women's Deer Hunting Seminar", "https://www.mass.gov/info-details/becoming-an-outdoors-woman-bow", "MassWildlife BOW, Oct 2026"]
-  ]},
-  { h: "In progress", items: [
-    ["Hunter ed online study guide", "", "Must be finished before the field day"]
-  ]},
-  { h: "Up next", items: [
-    ["Hunter ed field day", "", "Registered, Nov 16. Passing gives a lifetime certificate.", "2026-11-16"],
-    ["Archery for All (Wayland Rec)", "", "Recurve lessons, Fridays Nov 20 to Dec 18", "2026-12-18"],
-    ["Deer Field Dressing 101", "https://www.mass.gov/info-details/masswildlife-calendar", "MassWildlife, Nov 29, on the waitlist", "2026-11-29"],
-    ["Deer Processing", "https://www.mass.gov/info-details/masswildlife-calendar", "MassWildlife, Dec 6, on the waitlist", "2026-12-06"]
   ]}
 ];
 
@@ -481,7 +457,6 @@ function fillCards(id, groups){
     sec.appendChild(ul); box.appendChild(sec);
   });
 }
-fillCards("prog", PROGRESS);
 fillCards("next", NEXT);
 fillCards("res", RESOURCES);
 fillCards("arch", ARCHERY);
@@ -498,7 +473,7 @@ function masonry(box){
     c.appendChild(card);
   });
 }
-const boxes = [$("prog"), $("next"), $("res"), $("arch")];
+const boxes = [$("next"), $("res"), $("arch")];
 const layout = () => boxes.forEach(masonry);
 layout();
 addEventListener("resize", layout);
